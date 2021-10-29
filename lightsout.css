@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+body {
+  background: lightpink;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  /*tartalom középre*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  max-width: 300px;
+  margin: auto;
+  background-color: lightskyblue;
+ 
+}
+
+article {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+}
+
+.lampa {
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 35px;
+  height: 35px;
+  justify-self: center;
+  background-color: lightgreen;
+}
+
+.lampa:hover, .felbukkano input:hover {
+  cursor: grab;
+}
+
+main,
+header,
+footer,
+nav {
+  border: 1px solid darksalmon;
+  padding: 10px;
+}
+
+article,
+section {
+  border-left: 1px solid darksalmon;
+  border-right: 1px solid darksalmon;
+  padding: 10px;
+}
+
+section {
+  text-align: center;
+}
+
+header,
+footer {
+  text-align: center;
+  background-color: lightblue;
+ 
+}
+header{
+  font-weight: bold;  
+  text-shadow: 1px 1px 2px lemonchiffon;
+  font-size: 120%;
+  color: hotpink;
+}
+
+
+.felbukkano{
+  position: absolute;
+  background: lemonchiffon;
+  color: black;
+  opacity: 80%;
+  border: 1px solid darksalmon;
+  text-align: center; 
+  width: 30%;
+  height: 30%;
+   /*tartalom középre*/
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.felbukkano input[type=button]{
+  background: lightpink;
+  
+}
