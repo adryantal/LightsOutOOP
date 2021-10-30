@@ -6,15 +6,15 @@ $(function () {
   const db = 5; //kezdetben ennyi db lámpa világítson
   const kezdetiVilagitoIndexek = []; //a kezdetben világító lámpák indexpárosait tároló tömb
   let vilagitoLampak = db; //a világító lámpák számlálója, mely kezdetben db
- 
+  
 
   
   jatekterFeltolt();
   generalKezdetiVilagitoIndex();
-  $("#feladom").on("click",function(){
-    const lekapcsoltLampak = meret*meret-vilagitoLampak;
+  $("#feladom").on("click",function(){  
+    let lekapcsoltLampak = meret*meret-vilagitoLampak;  
     //alert("Játék megszakítva. Lekapcsolt lámpák száma: "+lekapcsoltLampak+". Új játék indul!");  
-    let felbukkanoablak = "<div class='felbukkano'><p>Játék megszakítva!<br> Lekapcsolt lámpák száma: "+lekapcsoltLampak+". Új játék indul!<p><input type='button' value='OK' id='OK'></div>";  
+    let felbukkanoablak = "<div class='felbukkano'><p>Játék megszakítva!<br> Nem világító lámpák száma: "+lekapcsoltLampak+". Új játék indul!<p><input type='button' value='OK' id='OK'></div>";  
     $("body").append(felbukkanoablak);
     $("#OK").on("click", function(){
       $(".felbukkano").remove();
@@ -76,8 +76,14 @@ $(function () {
 
 function nyert(){
   if(vilagitoLampak == 0){
-    alert("Gratulálunk, nyertél!");
-    jatektUjratolt();
+    //alert("Gratulálunk, nyertél!");
+    let felbukkanoablak = "<div class='felbukkano'><p>Gratulálunk, nyertél!!! Most pedig új játék indul!<p><input type='button' value='OK' id='OK'></div>";  
+    $("body").append(felbukkanoablak);
+    $("#OK").on("click", function(){
+      $(".felbukkano").remove();
+      jatektUjratolt();      
+    }); 
+    
   }
 }
 
